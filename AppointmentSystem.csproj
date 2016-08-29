@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFD3FE16-B7E3-4148-AF17-752BAF3B5E0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppointmentSystem</RootNamespace>
+    <AssemblyName>AppointmentSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FA0F49472B355AE58F20195E9ADEB8BA551DC061</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AppointmentSystem_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.RegularExpressions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appointment\AddEditAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\AddEditAppointment.Designer.cs">
+      <DependentUpon>AddEditAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment\AppointmentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\AppointmentList.Designer.cs">
+      <DependentUpon>AppointmentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginHome.Designer.cs">
+      <DependentUpon>LoginHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\StaffLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\StaffLogin.Designer.cs">
+      <DependentUpon>StaffLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\Bal\EncryptDecrypt.cs" />
+    <Compile Include="Modal\Bal\ExportData.cs" />
+    <Compile Include="Modal\Bal\Permission.cs" />
+    <Compile Include="Modal\Dal\DalAppointment.cs" />
+    <Compile Include="Modal\Dal\DalClientRegister.cs" />
+    <Compile Include="Modal\Dal\DalScheduleSlot.cs" />
+    <Compile Include="Modal\Dal\DalStaffRegister.cs" />
+    <Compile Include="Modal\Dal\DalUser.cs" />
+    <Compile Include="Modal\Pal\PalAppointment.cs" />
+    <Compile Include="Modal\Pal\PalClientRegistration.cs" />
+    <Compile Include="Modal\Pal\PalScheduleTime.cs" />
+    <Compile Include="Modal\Pal\PalStaffRegistration.cs" />
+    <Compile Include="Modal\Pal\PalUser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClientRegistration\AddEditClientRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientRegistration\AddEditClientRegistration.Designer.cs">
+      <DependentUpon>AddEditClientRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientRegistration\ClientRegistrationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientRegistration\ClientRegistrationList.Designer.cs">
+      <DependentUpon>ClientRegistrationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSlot\AddEditScheduleSlot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSlot\AddEditScheduleSlot.Designer.cs">
+      <DependentUpon>AddEditScheduleSlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleSlot\ScheduleSlotList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleSlot\ScheduleSlotList.Designer.cs">
+      <DependentUpon>ScheduleSlotList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StafftRegistration\AddEditStaffRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StafftRegistration\AddEditStaffRegistration.Designer.cs">
+      <DependentUpon>AddEditStaffRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StafftRegistration\StaffRegistrationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StafftRegistration\StaffRegistrationList.Designer.cs">
+      <DependentUpon>StaffRegistrationList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Appointment\AddEditAppointment.resx">
+      <DependentUpon>AddEditAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\AppointmentList.resx">
+      <DependentUpon>AppointmentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientRegistration\ClientRegistrationList.resx">
+      <DependentUpon>ClientRegistrationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginHome.resx">
+      <DependentUpon>LoginHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\StaffLogin.resx">
+      <DependentUpon>StaffLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ClientRegistration\AddEditClientRegistration.resx">
+      <DependentUpon>AddEditClientRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSlot\AddEditScheduleSlot.resx">
+      <DependentUpon>AddEditScheduleSlot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleSlot\ScheduleSlotList.resx">
+      <DependentUpon>ScheduleSlotList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StafftRegistration\AddEditStaffRegistration.resx">
+      <DependentUpon>AddEditStaffRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StafftRegistration\StaffRegistrationList.resx">
+      <DependentUpon>StaffRegistrationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AppointmentSystem_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TITLEBACKGROUND.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADD16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CHECK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DELETE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXPORTLIST.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PRINT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REFRESH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SAVEORG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SEARCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VIEWCOLUMNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EDITRIGHT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLEAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckRound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
